@@ -49,6 +49,12 @@ footer .copyright-info a {
   color: var(--bg);
 }
 
+footer .footer-col .social-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5em;
+}
+
 footer .footer-col p:not(:first-child) {
   opacity: 0.35;
 }

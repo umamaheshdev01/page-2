@@ -23,9 +23,16 @@ nav .logo a {
 }
 
 nav .menu-toggle-btn {
-  padding: 0.6em 0.65em 0.65em 0.65em;
-  background-color: var(--bg2);
+  --menu-stroke: 3px;
+  padding: 0.2em 1.1em 0.2em 0.2em;
+  background-color: var(--bg);
   color: var(--fg);
+  border: var(--menu-stroke) solid var(--fg);
+  border-radius: 999px;
+  display: flex;
+  align-items: center;
+  gap: 0.75em;
+  min-width: 12rem;
 }
 
 nav .menu-toggle-btn.menu-open {
@@ -35,12 +42,32 @@ nav .menu-toggle-btn.menu-open {
 
 nav .menu-toggle-btn p {
   user-select: none;
+  letter-spacing: 0.08em;
+  font-size: 1.15rem;
+  line-height: 1;
+  width: 100%;
+  text-align: center;
 }
 
 nav .logo,
 nav .menu-toggle-btn {
-  border-radius: 0.4em;
   cursor: pointer;
+}
+
+nav .menu-toggle-btn-avatar {
+  width: 3rem;
+  height: 3rem;
+  border-radius: 50%;
+  border: var(--menu-stroke) solid var(--fg);
+  overflow: hidden;
+  flex-shrink: 0;
+  background-color: var(--fg);
+}
+
+nav .menu-toggle-btn-avatar img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
 
 nav .menu-toggle-btn-wrapper {
@@ -48,8 +75,14 @@ nav .menu-toggle-btn-wrapper {
   display: flex;
   flex-direction: column;
   align-items: center;
-  height: 0.875rem;
-  clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
+  justify-content: flex-start;
+  height: 1rem;
+  overflow: hidden;
+  flex: 1;
+}
+
+nav .menu-toggle-btn.menu-open .menu-toggle-btn-avatar {
+  border-color: var(--bg);
 }
 
 /* nav - overlay */
