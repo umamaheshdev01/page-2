@@ -2,6 +2,57 @@ document.addEventListener("DOMContentLoaded", () => {
   const isContactPage = document.querySelector(".page.contact-page");
   if (!isContactPage) return;
 
+  const connectForm = document.querySelector(".connect-form");
+  const formToast = document.querySelector(".form-toast");
+
+  const showToast = (message) => {
+    if (!formToast) return;
+    formToast.textContent = message;
+    formToast.classList.add("is-visible");
+
+    window.clearTimeout(showToast.timeoutId);
+    showToast.timeoutId = window.setTimeout(() => {
+      formToast.classList.remove("is-visible");
+    }, 2800);
+  };
+
+  if (connectForm) {
+    connectForm.addEventListener("submit", async (event) => {
+      event.preventDefault();
+
+      const submitButton = connectForm.querySelector("button[type='submit']");
+      const formData = new FormData(connectForm);
+
+      if (submitButton) {
+        submitButton.disabled = true;
+        submitButton.textContent = "Sending...";
+      }
+
+      try {
+        const response = await fetch(
+          "https://formsubmit.co/ajax/Rajaharsha142@gmail.com",
+          {
+            method: "POST",
+            headers: { Accept: "application/json" },
+            body: formData,
+          }
+        );
+
+        if (!response.ok) throw new Error("Request failed");
+
+        connectForm.reset();
+        showToast("Request sent. Thank you!");
+      } catch (error) {
+        showToast("Couldn't send right now. Please try again.");
+      } finally {
+        if (submitButton) {
+          submitButton.disabled = false;
+          submitButton.textContent = "Send Request";
+        }
+      }
+    });
+  }
+
   const container = document.querySelector(".trail-container");
   let isDesktop = window.innerWidth > 1000;
   let animationId = null;

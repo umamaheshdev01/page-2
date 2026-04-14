@@ -62,6 +62,9 @@
           <div class="nav-item active">
             <p><a href="/contact">Slide In</a></p>
           </div>
+          <div class="nav-item">
+            <p><a href="/proposal">Growth Plan</a></p>
+          </div>
         </div>
         <div class="nav-footer">
           <div class="nav-footer-item">
@@ -106,13 +109,42 @@
             </p>
           </div>
           <p class="mn contact-card-header">Project Proposals</p>
-          <p class="mn">inquiry@otisvalen.com</p>
+          <p class="mn">Rajaharsha142@gmail.com</p>
           <br />
           <p class="mn contact-card-header">Just Vibes</p>
           <p class="mn">hi@otisvalen.com</p>
         </div>
         <div class="contact-card contact-card-2">
           <p class="mn contact-card-header">Drop a Line &#8599;</p>
+          <form
+            class="connect-form"
+            action="https://formsubmit.co/Rajaharsha142@gmail.com"
+            method="POST"
+          >
+            <input type="hidden" name="_subject" value="New Project Request" />
+            <input type="hidden" name="_captcha" value="false" />
+
+            <label class="mn" for="client-email">Your Email</label>
+            <input
+              id="client-email"
+              name="email"
+              type="email"
+              placeholder="you@domain.com"
+              required
+            />
+
+            <label class="mn" for="project-description">Project Description</label>
+            <textarea
+              id="project-description"
+              name="project_description"
+              rows="6"
+              placeholder="Tell me what you're building, timeline, and goals..."
+              required
+            ></textarea>
+
+            <button type="submit" class="mn">Send Request</button>
+          </form>
+          <p class="mn form-toast" role="status" aria-live="polite"></p>
         </div>
         <div class="contact-symbol">
           <img src="/images/global/symbols.png" alt="" />

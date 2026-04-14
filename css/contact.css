@@ -55,6 +55,90 @@
   height: 1rem;
 }
 
+.contact .contact-card-2 {
+  width: min(460px, 100%);
+  padding: 1em;
+  border: 2px solid var(--fg);
+  border-radius: 1em;
+  background: linear-gradient(
+    145deg,
+    rgba(155, 193, 188, 0.25),
+    rgba(244, 241, 187, 0.25)
+  );
+  box-shadow: 8px 8px 0 var(--fg);
+}
+
+.contact .contact-card-2 .contact-card-header {
+  margin-bottom: 0.25em;
+}
+
+.contact .connect-form {
+  display: flex;
+  flex-direction: column;
+  gap: 0.65em;
+}
+
+.contact .connect-form label {
+  margin-top: 0.35em;
+}
+
+.contact .connect-form input,
+.contact .connect-form textarea {
+  width: 100%;
+  border: 2px solid var(--fg);
+  border-radius: 0.65em;
+  padding: 0.8em 0.9em;
+  background: var(--bg);
+  color: var(--fg);
+  font-family: "formula-narrow";
+  font-size: 1rem;
+  font-weight: 600;
+  outline: none;
+  transition: transform 0.15s ease, box-shadow 0.15s ease,
+    background-color 0.15s ease;
+}
+
+.contact .connect-form textarea {
+  resize: vertical;
+  min-height: 120px;
+}
+
+.contact .connect-form input:focus,
+.contact .connect-form textarea:focus {
+  transform: translateY(-1px);
+  box-shadow: 0 0 0 3px rgba(20, 20, 20, 0.12);
+  background-color: #fff;
+}
+
+.contact .connect-form button {
+  margin-top: 0.5em;
+  width: 100%;
+  border: 2px solid var(--fg);
+  border-radius: 999px;
+  padding: 0.8em 1em;
+  background: var(--fg);
+  color: var(--bg);
+  cursor: pointer;
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+
+.contact .connect-form button:hover {
+  transform: translateY(-2px);
+  box-shadow: 4px 4px 0 var(--fg);
+}
+
+.contact .form-toast {
+  min-height: 1.2em;
+  opacity: 0;
+  transform: translateY(6px);
+  transition: opacity 0.2s ease, transform 0.2s ease;
+}
+
+.contact .form-toast.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
 @media (max-width: 1000px) {
   .contact {
     height: 100svh;
@@ -74,6 +158,14 @@
 
   .contact .contact-card-header-main p {
     width: 100%;
+  }
+
+  .contact .contact-card-2 {
+    box-shadow: 4px 4px 0 var(--fg);
+  }
+
+  .contact .connect-form {
+    text-align: left;
   }
 
   .contact .contact-symbol {
